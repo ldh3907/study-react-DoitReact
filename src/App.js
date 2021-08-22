@@ -28,6 +28,37 @@ import "./App.css";
 //   ...objectOne,
 // };
 // var { other, ...others } = combined2;
+// 객체 전개 연산자 예제
+
+// let num = 1;
+// num = num * 3;
+// let str = "문자";
+// str = "다른문자";
+// let arr = [];
+// arr = [1, 2, 3];
+// let obj = {};
+// obj = { name: "새 객체" };
+// 가변 변수 예제
+
+// const num = 1;
+// num = 2;
+// const str = "문자";
+// str = "새 문자";
+// const arr = [];
+// arr = [1, 2, 3];
+// const obj = {};
+// obj = { name: "내 이름" };
+//const 타입 변수 할당으로 값 변경 예제
+
+// const arr2 = [];
+// arr2.push(1);
+// arr2.splice(0, 0, 0);
+// arr2.pop();
+// const obj2 = {};
+// obj2["name"] = "내이름";
+// Object.assign(obj2, { name: "새이름" });
+// delete obj2.name;
+// const 타입 변수 함수로 값 변경
 
 class App extends Component {
   render() {
