@@ -60,6 +60,54 @@ import "./App.css";
 // delete obj2.name;
 // const 타입 변수 함수로 값 변경
 
+// const num1 = 1;
+// const num2 = num1 * 3;
+// const str1 = "문자";
+// const str2 = str1 + "추가";
+// const arr3 = [];
+// const arr4 = arr3.concat(1);
+// const arr5 = [...arr4, 2, 3];
+// const arr6 = arr5.slice(0, 1);
+// const [first, ...arr7] = arr5;
+// const obj3 = { name: "내이름", age: 20 };
+// const objValue = { name: "새이름", age: obj3.age };
+// const obj4 = { ...obj3, name: "새이름" };
+// const { name, ...obj5 } = obj4;
+//무결성 제약 규칙을 지키면서  불변 변수 값 변경 예제
+
+// class Shape {
+//   static create(x, y) {
+//     return new Shape(x, y);
+//   }
+//   name = "Shape";
+//   constructor(x, y) {
+//     this.move(x, y);
+//   }
+//   move(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+//   area() {
+//     return 0;
+//   }
+// }
+// 클래스 예제
+
+// class Circle extends Shape {
+//   constructor(x, y, radius) {
+//     super(x, y);
+//     this.radius = radius;
+//   }
+//   area() {
+//     if (this.radius === 0) return super.area();
+//     return this.radius * this.radius;
+//   }
+// }
+
+// var c = new Circle(0, 0, 10);
+// c.area();
+//클래스 상속 예제
+
 class App extends Component {
   render() {
     return (
