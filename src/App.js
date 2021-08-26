@@ -108,6 +108,101 @@ import "./App.css";
 // c.area();
 //클래스 상속 예제
 
+// var add = (first, second) => {
+//   return first + second;
+// };
+
+// var add = (first, second) => first + second;
+// var addAndMultiple = (first, second) => ({
+//   add: first + second,
+//   multiply: first * second,
+// });
+
+// function addNumber(num) {
+//   return function (value) {
+//     return num + value;
+//   };
+// }
+// var addNumber = (num) => (value) => num + value;
+
+// class MyClass {
+//   value = 10;
+//   constructor() {
+//     var addThis2 = function (first, second) {
+//       return this.value + first, second;
+//     }.bind(this);
+//     var addThis3 = (first, second) => this.value + first + second;
+//   }
+// }
+
+// var x = 0;
+// var y = 0;
+// var obj = { x, y };
+// var randomKeyString = "other";
+// var combined = {
+//   ["one" + randomKeyString]: "some value",
+// };
+// var obj2 = {
+//   x,
+//   methodA() {
+//     console.log("method A");
+//   },
+//   methodB() {
+//     return 0;
+//   },
+// };
+//객체 확장 표현식 예제
+
+// var List = [0, 1];
+// var [item1, item2, item3 = -1] = List;
+// [item2, item1] = [item1, item2];
+// var obj = {
+//   key1: "one",
+//   key2: "two",
+// };
+// var { key1: newKey1, key2, key3 = "default key3 value" } = obj;
+// 구조 분해 할당 예제
+
+// var [item1, ...otherItems] = [0, 1, 2];
+// var { key1, ...ohters } = { key1: "one", key2: "two" };
+// 구조 분해 할당 전개연산자 같이 사용 예제
+
+// function parse(qs) {
+//   const queryString = qs.substr(1);
+//   const chunks = queryString.split("&");
+//   let result = {};
+//   chunks.foreach((chunk) => {
+//     const parts = chunk.split("=");
+//     const key = parts[0];
+//     const value = Number.isNaN(Number(parts[1]) ? parts[1] : Number(parts[1]));
+//     result[key] = value;
+//   });
+//   return result;
+// }
+// foreach 함수 사용 예제
+
+// function parse(qs) {
+//   const queryString = qs.substr(1);
+//   const chunks = qs.split("&");
+//   const result = chunks.map((chunk) => {
+//     const [key, value] = chunk.split("=");
+//     return (result[key] = value);
+//   });
+//   return result;
+// }
+// foreach 함수 구조분해할당 같이 사용 예제
+
+// function parse(qs) {
+//   const queryString = qs.substr(1);
+//   const chunks = qs.split("&");
+//   const result = chunks.map((chunk) => {
+//     const [key, value] = chunk.split("=");
+//     return { key: key, value: value };
+//   });
+//   return result;
+// }
+// map 함수 사용 예제
+
 class App extends Component {
   render() {
     return (
