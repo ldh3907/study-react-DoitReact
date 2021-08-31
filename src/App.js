@@ -203,6 +203,76 @@ import "./App.css";
 // }
 // map 함수 사용 예제
 
+// function sum(numbers) {
+//   return numbers.reduce((total, num) => total + num, 0);
+// }
+// const total = sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+// console.log(total);
+// reduce 함수 예제
+
+// function parse(qs) {
+//   const queryString = qs.substr(1);
+//   const chunks = qs.split("&");
+//   return chunks
+//     .map((chunk) => {
+//       const [key, value] = chunk.split("=");
+//       return { key, value };
+//     })
+//     .reduce((result, item) => {
+//       result[item.key] = item.value;
+//       return result;
+//     }, {});
+// }
+// reduce map 함수 함께 사용 예제
+
+class Promise {
+  constructor(fn) {
+    const resolve = (...args) => {
+      if (typeof this.onDone === "function") {
+        this.onDone(...args);
+      }
+      if (typeof this.onComplete === "function") {
+        this.onComplete();
+      }
+    };
+    const reject = (...args) => {
+      if (typeof this.onError === "function") {
+        this.onError(...args);
+      }
+      if (typeof this.onComplete === "function") {
+        this.onComplete();
+      }
+    };
+    fn(resolve, reject);
+  }
+  then(onDone, onError) {
+    this.onDone = onDone;
+    this.onError = onError;
+  }
+  catch(onError) {
+    this.onError = onError;
+  }
+  finally(onComplete) {
+    this.onComplete = onComplete;
+    return this;
+  }
+}
+
+const work1 = () =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve("작업1 완료"), 100);
+  });
+
+const work2 = () =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve("작업2 완료"), 200);
+  });
+
+const work3 = () =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve("작업3 완료"), 300);
+  });
+
 class App extends Component {
   render() {
     return (
