@@ -1,3 +1,11 @@
+.App {
+  height: auto;
+}
+
+.box {
+  height: 300px;
+}
+
 .title {
   font-style: italic;
 }

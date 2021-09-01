@@ -225,60 +225,110 @@ import "./App.css";
 // }
 // reduce map 함수 함께 사용 예제
 
-class Promise {
-  constructor(fn) {
-    const resolve = (...args) => {
-      if (typeof this.onDone === "function") {
-        this.onDone(...args);
-      }
-      if (typeof this.onComplete === "function") {
-        this.onComplete();
-      }
-    };
-    const reject = (...args) => {
-      if (typeof this.onError === "function") {
-        this.onError(...args);
-      }
-      if (typeof this.onComplete === "function") {
-        this.onComplete();
-      }
-    };
-    fn(resolve, reject);
-  }
-  then(onDone, onError) {
-    this.onDone = onDone;
-    this.onError = onError;
-  }
-  catch(onError) {
-    this.onError = onError;
-  }
-  finally(onComplete) {
-    this.onComplete = onComplete;
-    return this;
-  }
-}
+// class Promise {
+//   constructor(fn) {
+//     const resolve = (...args) => {
+//       if (typeof this.onDone === "function") {
+//         this.onDone(...args);
+//       }
+//       if (typeof this.onComplete === "function") {
+//         this.onComplete();
+//       }
+//     };
+//     const reject = (...args) => {
+//       if (typeof this.onError === "function") {
+//         this.onError(...args);
+//       }
+//       if (typeof this.onComplete === "function") {
+//         this.onComplete();
+//       }
+//     };
+//     fn(resolve, reject);
+//   }
+//   then(onDone, onError) {
+//     this.onDone = onDone;
+//     this.onError = onError;
+//   }
+//   catch(onError) {
+//     this.onError = onError;
+//   }
+//   finally(onComplete) {
+//     this.onComplete = onComplete;
+//     return this;
+//   }
+// }
 
-const work1 = () =>
-  new Promise((resolve) => {
-    setTimeout(() => resolve("작업1 완료"), 100);
-  });
+// const work1 = () =>
+//   new Promise((resolve) => {
+//     setTimeout(() => resolve("작업1 완료"), 100);
+//   });
 
-const work2 = () =>
-  new Promise((resolve) => {
-    setTimeout(() => resolve("작업2 완료"), 200);
-  });
+// const work2 = () =>
+//   new Promise((resolve) => {
+//     setTimeout(() => resolve("작업2 완료"), 200);
+//   });
 
-const work3 = () =>
-  new Promise((resolve) => {
-    setTimeout(() => resolve("작업3 완료"), 300);
-  });
+// const work3 = () =>
+//   new Promise((resolve) => {
+//     setTimeout(() => resolve("작업3 완료"), 300);
+//   });
+// 비동기(ProMise) 함수 예제
+
+// function debounce(func, delay) {
+//   let inDebounce;
+//   return function (...args) {
+//     if (inDebounce) {
+//       clearTimeout(inDebounce);
+//     }
+//     inDebounce = setTimeout(() => func(...args), delay);
+//   };
+// }
+
+// const run = debounce((val) => console.log(val), 1000);
+// run("a");
+// run("b");
+// run("2");
+// 디바운스 예제
+
+// function throttle(func, delay) {
+//   let lastFunc;
+//   let lastRan;
+//   return function (...args) {
+//     const context = this;
+//     if (!lastRan) {
+//       func.call(context, ...args);
+//       lastRan = Date.now();
+//     } else {
+//       if (lastFunc) clearTimeout(lastFunc);
+//       lastFunc = setTimeout(function () {
+//         if (Date.now() - lastRan >= delay) {
+//           func.call(context, ...args);
+//           lastRan = Date.now();
+//         }
+//       }, delay - (Date.now() - lastRan));
+//     }
+//   };
+// }
+
+// var checkPosition = () => {
+//   const offset = 500;
+//   const currentScrollPosition = window.pageYOffset;
+//   const pageBottomPosition =
+//     document.body.offsetHeight - window.innerHeight - offset;
+//   if (currentScrollPosition >= pageBottomPosition) {
+//     console.log("다음 페이지 로딩");
+//   }
+// };
+
+// var infiniteScroll = throttle(checkPosition, 300);
+// window.addEventListener("scroll", infiniteScroll);
+// 스로틀 예제
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <h1 className="title">두잇! 리액트 시작하기</h1>
-        <div></div>
       </div>
     );
   }
