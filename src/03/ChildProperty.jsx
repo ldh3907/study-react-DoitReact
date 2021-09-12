@@ -1,5 +1,9 @@
-const ChildProperty = ({ childern }) => {
-  return <div>{childern}</div>;
+const ChildProperty = ({ children }) => {
+  return (
+    <div>
+      <div>{children}</div>
+    </div>
+  );
 };
 
 // ChildProperty.propTypes = {
